@@ -3,7 +3,7 @@
 - [x] UIKit
 - [x] MVC
 - [x] Network layer (URLSession)
-- [x] NSCashe
+- [x] NSCaсhe
 - [x] Pagination
 
 # Screenshorts
