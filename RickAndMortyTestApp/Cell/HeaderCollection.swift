@@ -1,6 +1,6 @@
 //
 //  HeaderCollection.swift
-//  RickandMortyTestApp
+//  RickAndMortyTestApp
 //
 //  Created by Fisenko Irina on 20.01.2024.
 //
@@ -13,14 +13,14 @@ final class HeaderCollection: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupTitleLable()
+        setupTitleLabel()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupTitleLable() {
+    private func setupTitleLabel() {
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Characters"

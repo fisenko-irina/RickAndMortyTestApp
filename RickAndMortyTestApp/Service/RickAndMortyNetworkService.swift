@@ -1,6 +1,6 @@
 //
 //  RickAndMortyNetworkService.swift
-//  RickandMortyTestApp
+//  RickAndMortyTestApp
 //
 //  Created by Fisenko Irina on 15.11.2023.
 //

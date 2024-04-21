@@ -1,6 +1,6 @@
 //
 //  RickAndMortyEpisode.swift
-//  RickandMortyTestApp
+//  RickAndMortyTestApp
 //
 //  Created by Fisenko Irina on 20.01.2024.
 //

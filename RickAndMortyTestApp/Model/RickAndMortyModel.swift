@@ -1,6 +1,6 @@
 //
 //  RickAndMortyModel.swift
-//  RickandMortyTestApp
+//  RickAndMortyTestApp
 //
 //  Created by Fisenko Irina on 18.01.2024.
 //
