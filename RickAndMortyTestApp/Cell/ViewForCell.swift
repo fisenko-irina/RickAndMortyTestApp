@@ -9,19 +9,19 @@ import Foundation
 import UIKit
 
 final class ViewForCell: UIView {
-    private let episodeName: UILabel = {
+    private lazy var episodeName: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "gilroy-semi-bold", size: 17)
         label.textColor = .white
         return label
     }()
-    private let seasonEpisode: UILabel = {
+    private lazy var seasonEpisode: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "statusColor")
         label.font = UIFont(name: "gilroy-medium", size: 13)
         return label
     }()
-    private let dateEpisode: UILabel = {
+    private lazy var dateEpisode: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "detailsTextColor")
         label.font = UIFont(name: "gilroy-medium", size: 12)
@@ -82,8 +82,8 @@ final class ViewForCell: UIView {
         NSLayoutConstraint.activate([
             seasonEpisode.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             seasonEpisode.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            seasonEpisode.trailingAnchor.constraint(equalTo: dateEpisode.leadingAnchor, constant: 16),
             seasonEpisode.heightAnchor.constraint(equalToConstant: 20),
+            seasonEpisode.widthAnchor.constraint(equalToConstant: 130)
         ])
         seasonEpisode.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
@@ -94,6 +94,7 @@ final class ViewForCell: UIView {
             dateEpisode.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             dateEpisode.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             dateEpisode.heightAnchor.constraint(equalToConstant: 20),
+            dateEpisode.leadingAnchor.constraint(equalTo: seasonEpisode.trailingAnchor, constant: -16),
         ])
         dateEpisode.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }

@@ -22,12 +22,17 @@ final class EpisodesCell: UITableViewCell {
     func setupCell() {
         contentView.addSubview(viewAdd)
         viewAdd.translatesAutoresizingMaskIntoConstraints = false
-        viewAdd.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        viewAdd.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        viewAdd.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        
+        NSLayoutConstraint.activate([
+            viewAdd.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            viewAdd.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            viewAdd.topAnchor.constraint(equalTo: contentView.topAnchor)
+        ])
+        
         let glue = viewAdd.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         glue.isActive = true
         glue.priority = .defaultHigh
+        
     }
     
     func configure(episode: Episode) {

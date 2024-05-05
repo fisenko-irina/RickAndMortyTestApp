@@ -8,35 +8,35 @@
 import UIKit
 
 final class InfoCell: UITableViewCell {
-    let speciesLabel: UILabel = {
+    private lazy var speciesLabel: UILabel = {
         let label = UILabel()
         label.text = "Species:"
         label.leftLabel()
         return label
     }()
-    let typeLabel: UILabel = {
+    private lazy var typeLabel: UILabel = {
         let label = UILabel()
         label.text = "Type:"
         label.leftLabel()
         return label
     }()
-    let genderLabel: UILabel = {
+    private lazy var genderLabel: UILabel = {
         let label = UILabel()
         label.text = "Gender:"
         label.leftLabel()
         return label
     }()
-    let speciesValue: UILabel = {
+    private lazy var speciesValue: UILabel = {
         let label = UILabel()
         label.rightLabel()
         return label
     }()
-    let typeValue: UILabel = {
+    private lazy var typeValue: UILabel = {
         let label = UILabel()
         label.rightLabel()
         return label
     }()
-    let genderValue: UILabel = {
+    private lazy var genderValue: UILabel = {
         let label = UILabel()
         label.rightLabel()
         return label
@@ -87,16 +87,18 @@ final class InfoCell: UITableViewCell {
             speciesLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             speciesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             speciesLabel.heightAnchor.constraint(equalToConstant: 20),
-            speciesLabel.trailingAnchor.constraint(equalTo: speciesValue.leadingAnchor, constant: 20)
+            speciesLabel.widthAnchor.constraint(equalToConstant: 64)
         ])
+        
         speciesLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        
     }
     private func setTypeLabel() {
         NSLayoutConstraint.activate([
             typeLabel.topAnchor.constraint(equalTo: speciesLabel.bottomAnchor, constant: 15),
             typeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            typeLabel.trailingAnchor.constraint(equalTo: typeValue.leadingAnchor, constant: 20),
-            typeLabel.heightAnchor.constraint(equalToConstant: 20)
+            typeLabel.heightAnchor.constraint(equalToConstant: 20),
+            typeLabel.widthAnchor.constraint(equalToConstant: 64)
         ])
         typeLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
@@ -104,8 +106,8 @@ final class InfoCell: UITableViewCell {
         NSLayoutConstraint.activate([
             genderLabel.topAnchor.constraint(equalTo: typeLabel.bottomAnchor, constant: 15),
             genderLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            genderLabel.trailingAnchor.constraint(equalTo: genderValue.leadingAnchor, constant: 20),
-            genderLabel.heightAnchor.constraint(equalToConstant: 20)
+            genderLabel.heightAnchor.constraint(equalToConstant: 20),
+            genderLabel.widthAnchor.constraint(equalToConstant: 64)
         ])
         genderLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
@@ -113,7 +115,8 @@ final class InfoCell: UITableViewCell {
         NSLayoutConstraint.activate([
             speciesValue.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             speciesValue.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            speciesValue.heightAnchor.constraint(equalToConstant: 20)
+            speciesValue.heightAnchor.constraint(equalToConstant: 20),
+            speciesValue.leadingAnchor.constraint(equalTo: speciesLabel.trailingAnchor, constant: 20)
         ])
         speciesLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
@@ -121,7 +124,8 @@ final class InfoCell: UITableViewCell {
         NSLayoutConstraint.activate([
             typeValue.topAnchor.constraint(equalTo: speciesValue.bottomAnchor, constant: 15),
             typeValue.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            typeValue.heightAnchor.constraint(equalToConstant: 20)
+            typeValue.heightAnchor.constraint(equalToConstant: 20),
+            typeValue.leadingAnchor.constraint(equalTo: typeLabel.trailingAnchor, constant: 20),
         ])
         typeLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
@@ -129,7 +133,8 @@ final class InfoCell: UITableViewCell {
         NSLayoutConstraint.activate([
             genderValue.topAnchor.constraint(equalTo: typeValue.bottomAnchor, constant: 15),
             genderValue.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            genderValue.heightAnchor.constraint(equalToConstant: 20)
+            genderValue.heightAnchor.constraint(equalToConstant: 20),
+            genderValue.leadingAnchor.constraint(equalTo: genderLabel.trailingAnchor, constant: 20),
         ])
         genderValue.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }

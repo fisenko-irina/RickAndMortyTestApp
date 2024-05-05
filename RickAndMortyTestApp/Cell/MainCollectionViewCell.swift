@@ -8,8 +8,8 @@
 import UIKit
 
 final class MainCollectionViewCell: UICollectionViewCell {
-    private let imageCell = UIImageView()
-    private let labelCell = UILabel()
+    private lazy var imageCell = UIImageView()
+    private lazy var labelCell = UILabel()
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
